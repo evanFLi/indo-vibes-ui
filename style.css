@@ -670,6 +670,29 @@ h2 {
   }
 }
 
+/* Fix tombol tidak bisa diklik */
+.btn, button, a.btn {
+  position: relative;
+  z-index: 9999;
+}
+
+/* Fix elemen yang nutupin klik */
+section, header, #screenshots, #features, .comic-panel {
+  position: relative;
+  z-index: 1;
+  transform-origin: center;
+}
+
+*, section, header {
+  pointer-events: auto !important;
+}
+
+.hero::before,
+.hero::after {
+  pointer-events: none !important;
+}
+
+
 
 
 
