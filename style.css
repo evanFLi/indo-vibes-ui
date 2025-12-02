@@ -556,128 +556,120 @@ h2 {
   color: #000;
 }
 
-/* =======================  
-   FULL RESPONSIVE FIX  
+/* =======================
+   FIX FULL RESPONSIVE FINAL
 ======================= */
-@media (max-width: 991px) {
+@media(max-width: 768px) {
 
-  body {
-    overflow-x: hidden!important;
+  * {
+    max-width: 100%;
   }
 
-  header {
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
+  body {
+    overflow-x: hidden !important;
+    padding: 0;
+  }
+
+  header,
+  section,
+  #screenshots,
+  #features,
+  .comic-panel {
+    margin: 10px;
+    padding: 18px;
+    transform: none !important; /* Remove skew */
+  }
+
+  /* NAV */
+  nav {
+    flex-wrap: wrap;
+    gap: 10px;
     text-align: center;
   }
 
-  .logo img {
-    width: 70px;
+  nav a {
+    font-size: 14px;
   }
 
-  .logo {
-    font-size: 22px;
-  }
-
-  nav {
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-  }
-
-  section, header, #features, #screenshots, .comic-panel {
-    margin: 15px;
-    padding: 25px;
-    transform: none; /* hilangkan skew di mobile supaya tidak overflow */
-  }
-
+  /* HERO */
   .hero {
-    padding: 60px 25px;
-    border-width: 6px;
+    padding: 50px 20px !important;
+    border-width: 4px;
   }
 
   .hero h1 {
-    font-size: 40px;
-    -webkit-text-stroke: 3px #000;
-    text-shadow: 3px 3px 0 #000;
+    font-size: 32px !important;
+    -webkit-text-stroke: 2px #000;
+    text-shadow: 2px 2px 0 #000;
   }
 
   .hero p {
-    font-size: 16px;
-    padding: 6px 10px;
+    font-size: 14px;
+    padding: 5px 8px;
   }
 
+  /* TEXT */
   h2 {
-    font-size: 32px;
+    font-size: 26px !important;
     text-align: center;
   }
 
   .section-subtext {
+    font-size: 14px;
     text-align: center;
-    font-size: 16px;
     margin-left: 0;
   }
 
+  /* GRID (Cards & Screenshot grid) */
   .cards,
   .screenshots-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+    gap: 12px;
   }
 
+  /* CARD */
   .card {
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 15px;
+    font-size: 14px;
   }
 
+  /* BUTTON */
   .btn {
     width: 100%;
-    font-size: 18px;
-    padding: 14px;
+    font-size: 16px;
+    padding: 12px;
   }
 
-  #screenshots h2,
-  #features h2 {
-    font-size: 32px;
-    padding: 6px 15px;
-  }
-
+  /* SCREENSHOTS IMAGE */
   .shot img {
-    border-radius: 8px;
+    border-radius: 6px;
+    width: 100%;
+    height: auto;
   }
 
+  /* FOOTER */
   .footer {
-    margin: 15px;
+    margin: 10px;
+    font-size: 12px;
     padding: 15px;
-    font-size: 13px;
   }
 }
 
-/* =======================  
-   EXTRA SMALL (HP kecil)
-======================= */
-@media (max-width: 480px) {
-
+/* Extra small devices */
+@media(max-width: 480px) {
   .hero h1 {
-    font-size: 30px;
+    font-size: 24px !important;
   }
 
   nav {
-    font-size: 14px;
-  }
-
-  .logo {
-    font-size: 18px;
+    font-size: 12px;
   }
 
   .logo img {
-    width: 50px;
-  }
-
-  .card {
-    font-size: 14px;
+    width: 45px;
   }
 }
+
 
 
 
