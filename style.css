@@ -1,0 +1,557 @@
+/* =======================
+   RESET
+======================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+}
+
+/* Import font komik */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+/* =======================
+   BODY (Pop Art Style)
+======================= */
+body {
+  background: #f6f6f6;
+  color: #111;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(rgba(0,0,0,0.20) 2px, transparent 2px),
+    radial-gradient(rgba(0,0,0,0.20) 2px, transparent 2px);
+  background-size: 25px 25px;
+  background-position: 0 0, 12px 12px;
+}
+
+/* =======================
+   HERO SECTION
+======================= */
+.hero {
+  position: relative;
+  padding: 140px 60px;
+  text-align: center;
+  color: #fff;
+  background: url("img/bckg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  border: 10px solid #fff;
+  box-shadow: 0 0 0 6px #000, 0 0 20px rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+
+/* animasi awan */
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 130%;
+  height: 100%;
+  background: url("img/cloud.png") repeat-x;
+  opacity: .35;
+  animation: cloudMove 35s linear infinite;
+}
+
+.hero::after {
+  animation-duration: 55s;
+  opacity: .22;
+}
+
+@keyframes cloudMove {
+  from { transform: translateX(-10%); }
+  to   { transform: translateX(10%); }
+}
+
+/* judul komik */
+.hero h1 {
+  font-family: "Bangers", cursive;
+  font-size: 75px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: #ffef00;
+  -webkit-text-stroke: 6px #000;
+  text-shadow:
+    6px 6px 0 #000,
+    -3px -3px 0 #fff,
+    3px -3px 0 #fff,
+    -3px 3px 0 #fff,
+    3px 3px 0 #fff;
+}
+
+/* teks paragraf */
+.hero p {
+  font-size: 22px;
+  font-weight: 700;
+  background: rgba(0,0,0,0.45);
+  padding: 8px 15px;
+  border-radius: 8px;
+  display: inline-block;
+  border: 3px solid #fff;
+  margin-top: 15px;
+}
+
+/* =======================
+   COMIC BORDER STYLE
+======================= */
+section, header {
+  border: 10px solid #fff;
+  background: #ffef00;
+  transform: skew(-3deg);
+  margin: 30px;
+  box-shadow: 0 0 0 6px #000, 0 0 20px rgba(0,0,0,0.4);
+}
+
+/* =======================
+   HEADER
+======================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 70px;
+  background: #ff4b4b;
+  border-radius: 12px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 26px;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 4px 4px 0 #000;
+}
+
+.logo img {
+  width: 100px;
+  height: auto;
+}
+
+/* =======================
+   NAV
+======================= */
+nav {
+  display: flex;
+  gap: 30px;
+  font-size: 16px;
+  position: relative;
+}
+
+nav a {
+  color: #fff;
+  font-weight: 800;
+  position: relative;
+  text-shadow: 3px 3px 0 #000;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background: #000;
+  transition: .3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* =======================
+   SECTIONS & TEXT
+======================= */
+section {
+  padding: 60px 70px;
+  background: #00e4fa;
+  border-radius: 12px;
+}
+
+.section-subtext {
+  margin-bottom: 30px;
+  font-size: 20px;
+  color: #000;
+  text-shadow: 3px 3px 0 #fff;
+  max-width: 900px;
+  margin-left: 20px;
+  text-align: left;
+}
+
+h2 {
+  text-align: left;
+  font-size: 45px;
+  font-weight: 900;
+  margin-bottom: 40px;
+  color: #000;
+  text-shadow: 6px 6px 0 #fff;
+}
+
+/* =======================
+   CARD
+======================= */
+.card {
+  background: #fff;
+  padding: 30px;
+  border: 6px solid #000;
+  border-radius: 15px;
+  transition: .3s;
+  margin-bottom: 30px;
+  box-shadow: 4px 4px 0 #000;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-5px) rotate(-2deg);
+}
+
+/* =======================
+   GRID
+======================= */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 30px;
+}
+
+/* =======================
+   BUTTON (Comic button)
+======================= */
+.btn {
+  margin-top: 40px;
+  padding: 17px 40px;
+  border-radius: 8px;
+  font-size: 22px;
+  background: #ffef00;
+  color: #000;
+  font-weight: 900;
+  display: inline-block;
+  border: 6px solid #000;
+  cursor: pointer;
+  letter-spacing: 1px;
+  box-shadow: 5px 5px 0 #000;
+  transition: .2s;
+}
+
+.btn:hover {
+  transform: translate(-3px,-3px);
+  box-shadow: 8px 8px 0 #000;
+}
+
+/* =======================
+   FOOTER
+======================= */
+.footer {
+  padding: 40px;
+  text-align: center;
+  color: #000;
+  font-weight: 700;
+  background: #fff;
+  border: 6px solid #000;
+  margin: 30px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+/* =======================
+   ICONS
+======================= */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+  background: #ffef00;
+  border: 4px solid #000;
+  transition: .3s;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+/* =========================
+   SCREENSHOTS
+========================= */
+/* =========================
+   SCREENSHOTS SECTION
+========================= */
+#screenshots {
+  background:
+    url("img/1.jpg"),
+    #00e4fa;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 70px 60px;
+
+  border: 10px solid #fff;
+  transform: skew(-1deg);
+  border-radius: 18px;
+  box-shadow: 0 0 0 6px #000,
+              0 0 20px rgba(0,0,0,0.4);
+  margin: 40px auto;
+}
+
+/* Title comic pop-art */
+#screenshots h2 {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 900;
+  color: #000;
+  text-shadow: 6px 6px 0 #fff;
+  display: inline-block;
+  background: #ffef00;
+  border: 6px solid #000;
+  padding: 10px 25px;
+  border-radius: 15px;
+  transform: rotate(-1deg);
+  margin-bottom: 40px;
+}
+
+.screenshots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 25px;
+  margin-top: 40px;
+  align-items: stretch;
+}
+
+/* Comic frame */
+.shot {
+  padding: 10px;
+  background: #fff;
+  border: 6px solid #000;
+  border-radius: 15px;
+  transition: .3s;
+  box-shadow: 4px 4px 0 #000;
+  cursor: pointer;
+}
+
+.shot:hover {
+  transform: rotate(-3deg) scale(1.07);
+  box-shadow: 7px 7px 0 #000;
+}
+
+/* Image style */
+.shot img {
+  width: 100%;
+  border-radius: 12px;
+  transition: .3s;
+}
+
+.shot img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.25);
+}
+
+/* FULLSCREEN PREVIEW */
+.preview {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  transition: .35s ease;
+}
+
+.preview.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.preview img {
+  width: 75%;
+  max-width: 800px;
+  border: 10px solid #fff;
+  box-shadow: 0 0 35px #fff;
+  animation: zoomComic .5s ease;
+}
+
+/* zoom pop animation */
+@keyframes zoomComic {
+  0% {
+    transform: scale(0.3) rotate(5deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* =====================
+   FULL SCREEN PREVIEW
+===================== */
+.preview {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.90);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  transition: .35s ease;
+}
+
+.preview.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.preview img {
+  width: 75%;
+  max-width: 900px;
+  border: 8px solid #fff;
+  animation: zoomIn .5s ease;
+  box-shadow: 0 0 35px #fff;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.3) rotate(8deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 768px) {
+  header { padding: 25px; }
+  .logo { font-size: 20px; }
+  section { padding: 45px 25px; }
+}
+
+.comic-panel {
+    border: 10px solid #fff;
+
+    background:
+      url("img/bck2.jpg"),
+      #00e4fa;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transform: skew(-2deg);
+    box-shadow: 0 0 0 6px #000, 0 0 20px rgba(0,0,0,0.4);
+}
+
+.comic-title {
+    text-shadow: 6px 6px 0 #fff;
+    font-size: 50px;
+    font-weight: 900;
+}
+
+.comic-bubble {
+    border-radius: 18px;
+    box-shadow: 5px 5px 0 #000;
+    transition: .2s;
+}
+
+.comic-bubble:hover {
+    transform: scale(1.03) rotate(-2deg);
+}
+
+/* =========================
+   FEATURES SECTION
+========================= */
+#features {
+  background:
+    url("img/bck3.jpg"),
+    #00e4fa;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border: 10px solid #fff;
+  transform: skew(-2deg);
+  box-shadow: 0 0 0 6px #000, 0 0 20px rgba(0,0,0,0.4);
+  border-radius: 15px;
+
+  padding: 60px 70px;
+}
+
+/* Title lebih komik */
+#features h2 {
+  font-size: 55px;
+  font-weight: 900;
+  margin-bottom: 40px;
+  color: #000;
+  text-align: center;
+  text-shadow: 6px 6px 0 #fff;
+  transform: rotate(-1deg);
+  background: #ffef00;
+  border: 6px solid #000;
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 15px;
+}
+
+/* Text intro */
+#features .section-subtext {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 40px;
+  color: #000;
+  text-shadow: 3px 3px 0 #fff;
+}
+
+/* Comic Cards */
+#features .card {
+  background:
+    linear-gradient(145deg, #ffffff, #f7f7f7);
+  border: 6px solid #000;
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 5px 5px 0 #000;
+  transition: .25s;
+  position: relative;
+}
+
+#features .card:hover {
+  transform: scale(1.03) rotate(-2deg);
+  box-shadow: 8px 8px 0 #000;
+}
+
+/* Card title comic style */
+#features .card h3 {
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 12px;
+  text-shadow: 3px 3px 0 #fff;
+  color: #000;
+}
+
+/* Card text */
+#features .card p {
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 600;
+  color: #000;
+}
